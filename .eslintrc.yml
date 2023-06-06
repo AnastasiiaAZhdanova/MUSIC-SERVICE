@@ -4,7 +4,6 @@ env:
 extends:
   - eslint:recommended
   - plugin:react/recommended
-  - airbnb
   - prettier
   - plugin:react/jsx-runtime
 parserOptions:
@@ -16,4 +15,5 @@ rules: {
     react/jsx-filename-extension: [1, { extensions: [.js, .jsx] }]
     react/prop-types: 0
     react/destructuring-assignment: [0]
+
 }
