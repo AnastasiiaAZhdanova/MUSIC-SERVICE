@@ -13,8 +13,9 @@ function App() {
           <Nav />
           <Centerblock />
           <Sidebar />
-          <Bar />
         </div>
+        <Bar />
+        <footer class="footer"></footer>
       </div>
     </div>
   );
