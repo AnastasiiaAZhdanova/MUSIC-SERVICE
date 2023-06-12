@@ -1,4 +1,4 @@
-import './css/style.css';
+// import './css/style.css';
 import Nav from './mainNav';
 import Centerblock from './mainCenterblock';
 import Sidebar from './mainSidebar';
@@ -15,7 +15,7 @@ function App() {
           <Sidebar />
         </div>
         <Bar />
-        <footer class="footer"></footer>
+        <footer className="footer" />
       </div>
     </div>
   );
