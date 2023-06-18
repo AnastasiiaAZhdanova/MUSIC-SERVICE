@@ -1,6 +1,19 @@
-import PlaylistItem from "./PlaylistItem";
+import PlaylistItem from './PlaylistItem';
+import Filter from './mainFilter';
+import Skeleton from './Skeleton';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function Centerblock() {
+const [isLoading, setIsLoading] = useState(true);
+useEffect(()=>{
+  setIsLoading(true)
+  const skeleton = setTimeout(()=>{
+    setIsLoading(false)
+  }, 3000)
+  return()=>clearTimeout(skeleton)
+},[])
+
   return (
     <div className="main__centerblock centerblock">
       <div className="centerblock__search search">
@@ -17,9 +30,7 @@ function Centerblock() {
       <h2 className="centerblock__h2">Треки</h2>
       <div className="centerblock__filter filter">
         <div className="filter__title">Искать по:</div>
-        <div className="filter__button button-author _btn-text">исполнителю</div>
-        <div className="filter__button button-year _btn-text">году выпуска</div>
-        <div className="filter__button button-genre _btn-text">жанру</div>
+        <Filter />
       </div>
       <div className="centerblock__content">
         <div className="content__title playlist-title">
@@ -33,10 +44,18 @@ function Centerblock() {
           </div>
         </div>
         <div className="content__playlist playlist">
-        {
-          // eslint-disable-next-line react/no-array-index-key
-          Array.from({length:11}).map((item,index)=><PlaylistItem key={index} />)
-        }
+          {isLoading ? (
+            [...new Array(11)].map((_, index) => <Skeleton key={index} />)
+          ) : (
+            <PlaylistItem />
+          )}
+
+          {
+            // eslint-disable-next-line react/no-array-index-key
+            Array.from({ length: 11 }).map((item, index) => (
+              <PlaylistItem key={index} />
+            ))
+          }
         </div>
       </div>
     </div>

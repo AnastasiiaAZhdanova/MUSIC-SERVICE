@@ -4,7 +4,6 @@ import Centerblock from './mainCenterblock';
 import Sidebar from './mainSidebar';
 import Bar from './bar';
 
-
 function App() {
   return (
     <div className="wrapper">

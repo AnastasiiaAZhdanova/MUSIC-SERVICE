@@ -1,8 +1,17 @@
-// import React from 'react';
-// import sprite from '../public/img/icon/sprite.svg';
-// import PlayerBtn from './PlayerBtn';
+import SkeletonBar from './SkeletonBar';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function Bar() {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setIsLoading(true);
+    const skeleton = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+    return () => clearTimeout(skeleton);
+  }, []);
+
   return (
     <div className="bar">
       <div className="bar__content">
@@ -11,8 +20,8 @@ function Bar() {
           <div className="bar__player player">
             <div className="player__controls">
               <div className="player__btn-prev">
-              <svg className="player__btn-prev-svg" alt="prev">
-              <use xlinkHref="./img/icon/sprite.svg#icon-prev" />
+                <svg className="player__btn-prev-svg" alt="prev">
+                  <use xlinkHref="./img/icon/sprite.svg#icon-prev" />
                 </svg>
               </div>
               <div className="player__btn-play _btn">
@@ -38,24 +47,27 @@ function Bar() {
             </div>
 
             <div className="player__track-play track-play">
-              <div className="track-play__contain">
-                <div className="track-play__image">
-                  <svg className="track-play__svg" alt="music">
-                    <use xlinkHref="img/icon/sprite.svg#icon-note" />
-                  </svg>
-                </div>
-                <div className="track-play__author">
-                  <a className="track-play__author-link" href="http://">
-                    Ты та...
-                  </a>
-                </div>
-                <div className="track-play__album">
-                  <a className="track-play__album-link" href="http://">
-                    Баста
-                  </a>
-                </div>
-              </div>
-
+              {isLoading ? (
+                <SkeletonBar />
+              ) : (
+                <div className="track-play__contain">
+                  <div className="track-play__image">
+                    <svg className="track-play__svg" alt="music">
+                      <use xlinkHref="img/icon/sprite.svg#icon-note" />
+                    </svg>
+                  </div>
+                  <div className="track-play__author">
+                    <a className="track-play__author-link" href="http://">
+                      Ты та...
+                    </a>
+                  </div>
+                  <div className="track-play__album">
+                    <a className="track-play__album-link" href="http://">
+                      Баста
+                    </a>
+                  </div>
+                </div>)}
+              
               <div className="track-play__like-dis">
                 <div className="track-play__like _btn-icon">
                   <svg className="track-play__like-svg" alt="like">
@@ -92,4 +104,3 @@ function Bar() {
   );
 }
 export default Bar;
-
