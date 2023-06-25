@@ -11,6 +11,8 @@ const SkeletonBar = (props) => (
     foregroundColor="#ecebeb"
     {...props}
   >
+    <rect x="441" y="24" rx="0" ry="0" width="2" height="8" /> 
+    <rect x="43" y="117" rx="0" ry="0" width="0" height="1" /> 
     <rect x="0" y="0" rx="0" ry="0" width="51" height="51" /> 
     <rect x="63" y="3" rx="0" ry="0" width="59" height="15" /> 
     <rect x="63" y="30" rx="0" ry="0" width="59" height="15" /> 

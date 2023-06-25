@@ -3,12 +3,13 @@ import Nav from './mainNav';
 import Centerblock from './mainCenterblock';
 import Sidebar from './mainSidebar';
 import Bar from './bar';
+import s from './App.module.css'
 
 function App() {
   return (
-    <div className="wrapper">
-      <div className="container">
-        <div className="main">
+    <div className={s.wrapper}>
+      <div className={s.container}>
+        <div className={s.main}>
           <Nav />
           <Centerblock />
           <Sidebar />
