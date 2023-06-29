@@ -1,12 +1,12 @@
-import PlaylistItem from './PlaylistItem';
-import Filter from './mainFilter';
-import Skeleton from './Skeleton';
+import PlaylistItem from '../../PlaylistItem';
+import Filter from '../../mainFilter';
+import Skeleton from '../../Skeleton';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import s from'./mainCenterblock.module.css';
-import './example\ stratos\ font/Stratos-Medium.woff2';
+import '../../example\ stratos\ font/Stratos-Medium.woff2';
 
-function Centerblock() {
+export const Centerblock=()=> {
 const [isLoading, setIsLoading] = useState(true);
 useEffect(()=>{
   setIsLoading(true)
