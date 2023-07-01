@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import s from './mainFilter.module.css';
-import './example\ stratos\ font/Stratos-Medium.woff2';
+import '../../example\ stratos\ font/Stratos-Medium.woff2';
 
 export default function Filter() {
   const [visibleFilter, setVisibleFilter] = useState(null);

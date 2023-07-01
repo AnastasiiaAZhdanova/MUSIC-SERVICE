@@ -1,8 +1,8 @@
-import SkeletonPlaylist from './SkeletonPlaylist';
+import SkeletonPlaylist from '../../SkeletonPlaylist';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import s from './mainSidebar.module.css';
-import './example\ stratos\ font/Stratos-Medium.woff2';
+import '../../example stratos font/Stratos-Medium.woff2';
 
 function Sidebar() {
   const [isLoading, setIsLoading] = useState(true);

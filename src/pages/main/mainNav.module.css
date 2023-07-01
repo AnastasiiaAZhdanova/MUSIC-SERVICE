@@ -30,8 +30,8 @@ ul li {
 @font-face {
   font-family: 'Stratos Medium';
   src: local('Stratos Medium'), local('Stratos Medium'),
-    url('./example\ stratos\ font/Stratos-Medium.woff2') format('woff2'),
-    url('./example\ stratos\ font/Stratos-Medium.woff') format('woff');
+    url('../../example\ stratos\ font/Stratos-Medium.woff2') format('woff2'),
+    url('../../example\ stratos\ font/Stratos-Medium.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }

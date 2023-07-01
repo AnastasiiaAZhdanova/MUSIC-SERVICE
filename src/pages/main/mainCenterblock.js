@@ -1,5 +1,5 @@
 import PlaylistItem from '../../PlaylistItem';
-import Filter from '../../mainFilter';
+import Filter from './mainFilter';
 import Skeleton from '../../Skeleton';
 import { useState } from 'react';
 import { useEffect } from 'react';

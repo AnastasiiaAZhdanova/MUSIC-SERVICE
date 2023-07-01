@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import s from './mainNav.module.css'
-import './example\ stratos\ font/Stratos-Medium.woff2';
+import '../../example\ stratos\ font/Stratos-Medium.woff2';
 
 function Nav() {
   const [visible, setVisible] = useState(false);
