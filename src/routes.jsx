@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Centerblock } from './pages/main/mainCenterblock';
 import Nav from './pages/main/mainNav';
 import Sidebar from './pages/main/mainSidebar';
-import Bar from './bar';
+import Bar from '../src/pages/main/bar';
 import { Login } from './pages/login';
 import { Mytracks } from './pages/myTracks';
 import { Registration } from './pages/registration';
