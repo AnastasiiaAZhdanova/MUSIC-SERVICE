@@ -26,7 +26,7 @@ class AudioPlayer extends React.Component {
   };
 
   render() {
-    //const { playing } = this.state;
+    const { playing } = this.state;
     const { src } = this.props;
 
     return (
@@ -37,31 +37,25 @@ class AudioPlayer extends React.Component {
           onTimeUpdate={this.handleTimeUpdate}
         />
         <div className={`${s.player__btnPlay} ${s._btn}`}>
-          <svg
-            onClick={this.handlePlay}
-            className={s.player__btnPlaySvg}
-            alt="play"
-          >
-            <use xlinkHref="img/icon/sprite.svg#icon-play" />
-          </svg>
+          {!playing ? (
+            <svg
+              onClick={this.handlePlay}
+              className={s.player__btnPlaySvg}
+              alt="play"
+            >
+              <use xlinkHref="img/icon/sprite.svg#icon-play" />
+            </svg>
+          ) : (
+            <svg
+              onClick={this.handlePause}
+              className={s.player__btnPauseSvg}
+              alt="pause"
+            >
+              <use xlinkHref="img/icon/sprite.svg#icon-pause" />
+            </svg>
+          )}
         </div>
-        <div className={s.player__btnNext}>
-          <svg
-            onClick={this.handlePause}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide lucide-square"
-          >
-            <rect width="14" height="14" x="3" y="3" fill="#D9D9D9"/>
-          </svg>
-        </div>
+        
       </div>
     );
   }
