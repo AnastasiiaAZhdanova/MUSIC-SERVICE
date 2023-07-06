@@ -21,19 +21,11 @@ function Bar() {
         <div className={s.bar__content}>
           <div className={`${s.bar__player} ${s.player}`}>
             <div className={s.player__controls}>
-              <div className={s.player__btnPrev}>
-                <svg className={s.player__btnPrevSvg} alt="prev">
-                  <use xlinkHref="./img/icon/sprite.svg#icon-prev" />
-                </svg>
-              </div>
+              
               
                 <AudioPlayer src="./media/Bobby_Marleni_-_Dropin.mp3" />
+                
               
-              <div className={s.player__btnNext}>
-                <svg className={s.player__btnNextSvg} alt="next">
-                  <use xlinkHref="img/icon/sprite.svg#icon-next" />
-                </svg>
-              </div>
               <div className={`${s.player__btnRepeat} ${s._btnIcon}`}>
                 <svg className={s.player__btnRepeatSvg} alt="repeat">
                   <use xlinkHref="img/icon/sprite.svg#icon-repeat" />
@@ -83,22 +75,7 @@ function Bar() {
               </div>
             </div>
           </div>
-          <div className={`${s.bar__volumeBlock} ${s.volume}`}>
-            <div className={s.volume__content}>
-              <div className={s.volume__image}>
-                <svg className={s.volume__svg} alt="volume">
-                  <use xlinkHref="img/icon/sprite.svg#icon-volume" />
-                </svg>
-              </div>
-              <div className={`${s.volume__progress} ${s._btn}`}>
-                <input
-                  className={`${s.volume__progressLine} ${s._btn}`}
-                  type="range"
-                  name="range"
-                />
-              </div>
-            </div>
-          </div>
+         
         </div>
       </div>
     </div>

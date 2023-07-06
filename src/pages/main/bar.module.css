@@ -161,7 +161,7 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding: 0 92px 0 0;
+    padding: 0 9px 0 30px;
   }
   
   .player__controls {
@@ -213,6 +213,11 @@ body {
   width: 22px;
   height: 20px;
   fill: #d9d9d9;
+}
+
+.player__progressBar{
+  
+  display: flex;
 }
 
 .player__btnNext {
