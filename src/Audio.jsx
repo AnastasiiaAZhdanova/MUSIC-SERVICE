@@ -14,7 +14,7 @@ class AudioPlayer extends React.Component {
   audioRef = React.createRef();
 
   //componentDidMount() {
-   // this.setState({ tracks: this.props.tracks });
+  // this.setState({ tracks: this.props.tracks });
   //}
 
   handlePlay = () => {
@@ -72,7 +72,17 @@ class AudioPlayer extends React.Component {
           onTimeUpdate={this.handleTimeUpdate}
           onEnded={this.handleNextTrack}
         />
-
+        <div>
+          <input
+            className={s.player__progressBar}
+            type="range"
+            min={0}
+            max={duration}
+            step={0.01}
+            value={currentTime}
+            onChange={this.handleSeek}
+          />
+        </div>
         <div className={s.player__btnPrev}>
           <svg
             //onClick={this.handlePrevTrack}
@@ -113,33 +123,23 @@ class AudioPlayer extends React.Component {
           </svg>
         </div>
 
-        <div className={s.player__progressBar}>
-        <input
-            type="range"
-            min={0}
-            max={duration}
-            step={0.01}
-            value={currentTime}
-            onChange={this.handleSeek}
-          />
-                
-        <div className={`${s.bar__volumeBlock} ${s.volume}`}>
-          <div className={s.volume__content}>
-            <div className={s.volume__image}>
-              <svg className={s.volume__svg} alt="volume">
-                <use xlinkHref="img/icon/sprite.svg#icon-volume" />
-              </svg>
+        <div className={s.player__volumeBar}>
+          <div className={`${s.bar__volumeBlock} ${s.volume}`}>
+            <div className={s.volume__content}>
+              <div className={s.volume__image}>
+                <svg className={s.volume__svg} alt="volume">
+                  <use xlinkHref="img/icon/sprite.svg#icon-volume" />
+                </svg>
+              </div>
+              <input
+                type="range"
+                min={0}
+                max={1}
+                step={0.01}
+                value={volume}
+                onChange={this.handleVolumeChange}
+              />
             </div>
-
-            <input
-              type="range"
-              min={0}
-              max={1}
-              step={0.01}
-              value={volume}
-              onChange={this.handleVolumeChange}
-            />
-          </div>
           </div>
         </div>
       </div>
