@@ -13,22 +13,7 @@ function Nav() {
 
   const { theme, setTheme } = useTheme();
 
-  const handleLightThemeClick = () => {
-    setTheme('light');
-  };
-
-  const handleDarkThemeClick = () => {
-    setTheme('dark');
-  };
-
-  const toggleTheme = () => {
-    {
-      theme === 'dark' ? handleLightThemeClick() : handleDarkThemeClick;
-    }
-    {
-      theme === 'light' ? handleDarkThemeClick() : handleLightThemeClick;
-    }
-  };
+  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
   return (
     <nav className={`${s.main__nav} ${s.nav} `}>
