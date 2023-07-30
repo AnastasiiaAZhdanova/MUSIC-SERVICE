@@ -3,31 +3,41 @@ import s from './mainNav.module.css';
 import '../../example stratos font/Stratos-Medium.woff2';
 import Night from '../../night.png';
 import Light from '../../day.png';
-import { useThemeContext } from '../../theme';
-import { ThemeContext, themes } from '../../theme';
-import { ThemeSwitcher } from '../../theme-switcher';
+import Logo from '../../logo.png';
+import Logo2 from '../../logo2.png';
+import { useTheme } from '../../use-theme';
 
 function Nav() {
   const [visible, setVisible] = useState(false);
   const toggleVisibility = () => setVisible(!visible);
 
-  const { theme } = useThemeContext();
+  const { theme, setTheme } = useTheme();
 
-  const [currentTheme, setCurrentTheme] = useState(themes.light);
+  const handleLightThemeClick = () => {
+    setTheme('light');
+  };
+
+  const handleDarkThemeClick = () => {
+    setTheme('dark');
+  };
 
   const toggleTheme = () => {
-    if (currentTheme === themes.dark) {
-      setCurrentTheme(themes.light);
-      return;
+    {
+      theme === 'dark' ? handleLightThemeClick() : handleDarkThemeClick;
     }
-
-    setCurrentTheme(themes.dark);
+    {
+      theme === 'light' ? handleDarkThemeClick() : handleLightThemeClick;
+    }
   };
 
   return (
-    <nav className={`${s.main__nav} ${s.nav}`}>
+    <nav className={`${s.main__nav} ${s.nav} `}>
       <div className={`${s.nav__logo} ${s.logo}`}>
-        <img className={s.logo__image} src="./img/logo.png" alt="logo" />
+        <img
+          className={s.logo__image}
+          src={theme === 'dark' ? Logo : Logo2}
+          alt="logo"
+        />
       </div>
       <div
         className={`${s.nav__burger} ${s.burger}`}
@@ -56,11 +66,9 @@ function Nav() {
               </a>
             </li>
             <li>
-              <ThemeContext.Provider
-                value={{ theme: currentTheme, toggleTheme }}
-              >
-                <ThemeSwitcher />
-              </ThemeContext.Provider>
+              <button className={s.menu__theme} onClick={toggleTheme}>
+                <img src={theme === 'dark' ? Night : Light} alt="theme" />
+              </button>
             </li>
           </ul>
         </div>
