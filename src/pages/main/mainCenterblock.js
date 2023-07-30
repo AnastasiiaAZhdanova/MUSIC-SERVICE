@@ -7,6 +7,7 @@ import s from'./mainCenterblock.module.css';
 import '../../example\ stratos\ font/Stratos-Medium.woff2';
 
 export const Centerblock=()=> {
+  
 const [isLoading, setIsLoading] = useState(true);
 useEffect(()=>{
   setIsLoading(true)

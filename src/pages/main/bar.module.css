@@ -1,103 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
 
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-a,
-a:visited {
-  text-decoration: none;
-  font-family: 'Stratos Medium', sans-serif;
-  cursor: pointer;
-}
-
-button,
-._btn {
-  cursor: pointer;
-}
-
-ul li {
-  list-style: none;
-}
-
-@font-face {
-  font-family: 'Stratos Medium';
-  src: local('Stratos Medium'), local('Stratos Medium'),
-    url('../../example\ stratos\ font/Stratos-Medium.woff2') format('woff2'),
-    url('../../example\ stratos\ font/Stratos-Medium.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-html,
-body {
-  width: 100%;
-  height: 100%;
-  font-family: 'Stratos Medium', sans-serif;
-  color: #ffffff;
-}
-
-
-
-.container {
-  max-width: 1920px;
-  height: 100vh;
-  margin: 0 auto;
-  position: relative;
-  background-color: #181818;
-}
-
-._btn-text:hover {
-  border-color: #d9b6ff;
-  color: #d9b6ff;
-  cursor: pointer;
-}
-
-._btn-icon:hover svg {
-  fill: transparent;
-  stroke: #acacac;
-  cursor: pointer;
-}
-
-._btn-text:active {
-  border-color: #ad61ff;
-  color: #ad61ff;
-  cursor: pointer;
-}
-
-._btn-icon:active svg {
-  fill: transparent;
-  stroke: #ffffff;
-  cursor: pointer;
-}
-
-._btn-icon:active .track-play__like-svg,
-._btn-icon:active .track-play__dislike-svg {
-  fill: #696969;
-  stroke: #ffffff;
-  cursor: pointer;
-}
-
-.main {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
 
 .bar {
     position: absolute;
@@ -332,7 +233,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: var(--color);
   white-space: nowrap;
 }
 
@@ -348,7 +249,7 @@ body {
   font-weight: 400;
   font-size: 13px;
   line-height: 24px;
-  color: #ffffff;
+  color: var(--color);
 }
 
 .trackPlay__likeDis {
